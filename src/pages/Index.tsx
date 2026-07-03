@@ -4,45 +4,107 @@ import Icon from '@/components/ui/icon';
 const competitors = [
   {
     name: 'BRKNO Урал',
-    site: 'ural.brkno.com',
+    site: 'https://brkno.com',
     city: 'Екатеринбург',
     showroom: true,
     presence: 'Прямой конкурент',
-    color: 'destructive',
     strengths: ['Физический шоурум в Екатеринбурге', 'Локальная логистика', 'Доверие местных клиентов'],
     weaknesses: ['Ограниченный ассортимент уличных серий', 'Средний ценовой сегмент'],
     threat: 90,
   },
   {
     name: 'Gurian',
-    site: 'gurian.ru',
+    site: 'https://gurian.ru',
     city: 'Липецк',
     showroom: false,
     presence: 'Федеральный игрок',
-    color: 'accent',
     strengths: ['Широкий каталог напольных вазонов', 'Развитая онлайн-витрина', 'Опт и розница'],
     weaknesses: ['Удалённая логистика до Урала', 'Нет присутствия в регионе', 'Долгая доставка'],
     threat: 55,
   },
   {
     name: 'Clean Planet Group',
-    site: 'cleanplanetgroup.ru',
+    site: 'https://cleanplanetgroup.ru',
     city: 'Славянск-на-Кубани',
     showroom: false,
     presence: 'Южный регион',
-    color: 'primary',
     strengths: ['Специализация на уличных кашпо', 'Собственное производство'],
     weaknesses: ['Огромное транспортное плечо до Екб', 'Слабая узнаваемость на Урале', 'Высокая стоимость доставки'],
     threat: 35,
   },
 ];
 
-const metrics = [
-  { label: 'Близость к рынку Екб', values: [95, 40, 15], us: 60 },
-  { label: 'Ассортимент вазонов', values: [55, 90, 70], us: 80 },
-  { label: 'Качество пластика', values: [65, 60, 75], us: 90 },
-  { label: 'Ценовая доступность', values: [50, 70, 45], us: 75 },
-  { label: 'Онлайн-присутствие', values: [70, 85, 55], us: 45 },
+const comparisons = [
+  {
+    title: 'Ваза декоративная №8 «Аура»',
+    ours: {
+      brand: 'ЗАО «Пластик» (наш)',
+      img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/876db766-21c9-4565-8f22-49d05b80dec2.jpg',
+      size: '750×750×550',
+      weight: '6 кг',
+      volume: '161 л',
+      price: '8 700 ₽',
+      priceNum: 8700,
+      url: 'https://www.ap-plastic.ru/product/vazony-dlya-tsvetov/vaza-dekorativnaya-8-aura-tsvet-antratsit/?sphrase_id=4139',
+    },
+    rivals: [
+      {
+        brand: 'BERKANO',
+        img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/9bdb59d4-c7a9-4a27-bae3-ebdcceba2ed3.jpg',
+        size: '650×340×600',
+        weight: '6 кг',
+        volume: '110 л',
+        price: '14 790 ₽',
+        priceNum: 14790,
+        url: 'https://brkno.com/catalog/kashpo-classic-60-snow-white',
+      },
+      {
+        brand: 'GURIAN',
+        img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/be5f4759-3a2b-4e32-bf94-84085b3be37d.jpg',
+        size: '800×800×900',
+        weight: '—',
+        volume: '150 л',
+        price: '25 200 ₽',
+        priceNum: 25200,
+        url: 'https://gurian.ru/catalog/vazony-napolnye/kashpo-vazon-ulichnyy-gurian-classic-900-siniy-150-litrov-ozelenenie-goroda/',
+      },
+    ],
+  },
+  {
+    title: 'Ваза декоративная №30 «Куб малый»',
+    ours: {
+      brand: 'ЗАО «Пластик» (наш)',
+      img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/056243ea-f15e-490c-b54a-e0887ebaf662.jpg',
+      size: '790×790×790',
+      weight: '30,2 кг',
+      volume: '180 л',
+      price: '30 000 ₽',
+      priceNum: 30000,
+      url: 'https://www.ap-plastic.ru/product/vazony-dlya-tsvetov/vaza-dekorativnaya-30-kub-malyy/',
+    },
+    rivals: [
+      {
+        brand: 'BERKANO',
+        img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/75169cef-33cc-4be5-baff-1497a909f83d.jpg',
+        size: '800×800×640',
+        weight: '19 кг',
+        volume: '190 л',
+        price: '36 960 ₽',
+        priceNum: 36960,
+        url: 'https://brkno.com/catalog/kashpo-cubo-80-snow-white',
+      },
+      {
+        brand: 'GURIAN',
+        img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/be5f4759-3a2b-4e32-bf94-84085b3be37d.jpg',
+        size: '800×800×850',
+        weight: '30 кг',
+        volume: '157 л',
+        price: '26 250 ₽',
+        priceNum: 26250,
+        url: 'https://gurian.ru/catalog/vazony-napolnye/vazon-napolnyy-bolshoy/',
+      },
+    ],
+  },
 ];
 
 const dataNeeds = [
@@ -73,7 +135,7 @@ const Index = () => {
             Рынок уличных вазонов из&nbsp;пластика
           </h1>
           <p className="animate-fade-up mt-6 text-lg md:text-xl text-primary-foreground/80 max-w-2xl" style={{ animationDelay: '0.2s' }}>
-            Отчёт по конкурентной среде в Екатеринбурге. Мы производим вазоны из высококачественного пластика и находимся в Челябинске — этот анализ показывает, как выйти на соседний рынок.
+            Отчёт по конкурентной среде в Екатеринбурге. Мы производим вазоны из высококачественного пластика и находимся в Челябинске — этот анализ показывает, как выйти на соседний рынок
           </p>
           <div className="animate-fade-up mt-10 flex flex-wrap gap-4" style={{ animationDelay: '0.3s' }}>
             {[
@@ -136,31 +198,90 @@ const Index = () => {
                   </div>
                 ))}
               </div>
-              <div className="mt-5 pt-4 border-t border-border text-xs text-muted-foreground font-mono">{c.site}</div>
+              <a
+                href={c.site}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="mt-5 pt-4 border-t border-border flex items-center gap-2 font-700 text-primary hover:text-accent transition-colors group"
+              >
+                <Icon name="ExternalLink" size={16} />
+                <span className="underline underline-offset-4 decoration-2">Перейти на сайт</span>
+                <Icon name="ArrowRight" size={16} className="group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ГРАФИК СРАВНЕНИЯ */}
+      {/* СРАВНЕНИЕ ТОВАРОВ */}
       <section className="bg-primary text-primary-foreground py-20">
         <div className="container">
-          <SectionTitle icon="BarChart3" pre="Сравнение по факторам" title="Мы против конкурентов" light />
-          <div className="mt-12 grid lg:grid-cols-2 gap-x-16 gap-y-10">
-            {metrics.map((m) => (
-              <div key={m.label}>
-                <div className="flex justify-between items-baseline mb-3">
-                  <span className="font-600">{m.label}</span>
-                  <span className="font-display text-accent text-lg">Мы: {m.us}%</span>
+          <SectionTitle icon="Scale" pre="Товар против товара" title="Мы против конкурентов" light />
+          <p className="text-primary-foreground/70 max-w-2xl mt-4">
+            Сравнение наших вазонов с сопоставимыми моделями BERKANO и GURIAN по размеру, объёму и цене.
+          </p>
+
+          <div className="mt-12 space-y-16">
+            {comparisons.map((cmp) => {
+              const all = [cmp.ours, ...cmp.rivals];
+              const maxPrice = Math.max(...all.map((p) => p.priceNum));
+              return (
+                <div key={cmp.title}>
+                  <h3 className="font-display text-2xl md:text-3xl uppercase text-accent mb-6 flex items-center gap-3">
+                    <Icon name="Flower2" size={26} /> {cmp.title}
+                  </h3>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    {all.map((p, idx) => {
+                      const isOurs = idx === 0;
+                      const cheapest = p.priceNum === Math.min(...all.map((x) => x.priceNum));
+                      return (
+                        <div
+                          key={p.brand + idx}
+                          className={`rounded-2xl overflow-hidden border ${isOurs ? 'bg-accent/15 border-accent ring-2 ring-accent/40' : 'bg-primary-foreground/5 border-primary-foreground/15'}`}
+                        >
+                          <div className="relative h-52 bg-white overflow-hidden">
+                            <img src={p.img} alt={p.brand} className="w-full h-full object-cover" />
+                            <span className={`absolute top-3 left-3 text-xs font-700 px-3 py-1 rounded-full ${isOurs ? 'bg-accent text-accent-foreground' : 'bg-primary text-primary-foreground'}`}>
+                              {p.brand}
+                            </span>
+                            {cheapest && (
+                              <span className="absolute top-3 right-3 text-xs font-700 px-3 py-1 rounded-full bg-white text-primary flex items-center gap-1">
+                                <Icon name="BadgeCheck" size={14} /> Дешевле
+                              </span>
+                            )}
+                          </div>
+                          <div className="p-6">
+                            <Spec icon="Ruler" label="Размер, мм" value={p.size} />
+                            <Spec icon="Box" label="Объём" value={p.volume} />
+                            <Spec icon="Weight" label="Вес" value={p.weight} />
+                            <div className="mt-4 pt-4 border-t border-primary-foreground/15">
+                              <div className="flex items-end justify-between mb-2">
+                                <span className="text-sm text-primary-foreground/60">Цена</span>
+                                <span className="font-display text-2xl text-accent">{p.price}</span>
+                              </div>
+                              <div className="h-1.5 rounded-full bg-primary-foreground/10 overflow-hidden">
+                                <div className={`h-full rounded-full ${isOurs ? 'bg-accent' : 'bg-primary-foreground/40'}`} style={{ width: `${(p.priceNum / maxPrice) * 100}%` }} />
+                              </div>
+                            </div>
+                            <a
+                              href={p.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mt-4 flex items-center gap-2 font-700 text-sm text-accent hover:opacity-80 transition group"
+                            >
+                              <Icon name="ExternalLink" size={15} />
+                              <span className="underline underline-offset-4 decoration-2">Открыть товар</span>
+                              <Icon name="ArrowRight" size={15} className="group-hover:translate-x-1 transition-transform" />
+                            </a>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <Bar label="Мы (Челябинск)" value={m.us} highlight />
-                  {m.values.map((v, idx) => (
-                    <Bar key={idx} label={competitors[idx].name} value={v} />
-                  ))}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -191,8 +312,8 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-6 mt-12">
             {[
               { icon: 'Store', t: 'Точка присутствия', d: 'У BRKNO есть шоурум — это их главное преимущество. Рассмотрите пункт выдачи или партнёрский шоурум в Екатеринбурге.' },
-              { icon: 'Award', t: 'Ставка на качество', d: 'Ваш козырь — высококачественный пластик. Подчёркивайте морозостойкость и срок службы в B2B-предложениях.' },
-              { icon: 'Truck', t: 'Скорость доставки', d: '200 км от Челябинска — это быстрее, чем у Липецка и Кубани. Делайте акцент на срочную доставку в регион.' },
+              { icon: 'Award', t: 'Ставка на цену и качество', d: 'Наша «Аура» на 40–65% дешевле аналогов BERKANO и GURIAN. Делайте акцент на выгодной цене при высоком качестве пластика.' },
+              { icon: 'Truck', t: 'Скорость доставки', d: '200 км от Челябинска — быстрее, чем у Липецка и Кубани. Акцент на срочную доставку в регион.' },
               { icon: 'Building', t: 'Работа с B2B и городом', d: 'Муниципальные закупки, УК, ландшафтные компании. Заходите через тендеры на zakupki.gov.ru.' },
             ].map((r) => (
               <div key={r.t} className="bg-card rounded-2xl border border-border p-7 flex gap-5">
@@ -230,16 +351,12 @@ const SectionTitle = ({ icon, pre, title, light }: { icon: string; pre: string; 
   </div>
 );
 
-const Bar = ({ label, value, highlight }: { label: string; value: number; highlight?: boolean }) => (
-  <div className="flex items-center gap-3">
-    <span className={`w-40 shrink-0 text-xs truncate ${highlight ? 'text-accent font-600' : 'text-primary-foreground/60'}`}>{label}</span>
-    <div className="flex-1 h-6 rounded-md bg-primary-foreground/10 overflow-hidden">
-      <div
-        className={`h-full rounded-md transition-all duration-1000 ${highlight ? 'bg-accent' : 'bg-primary-foreground/30'}`}
-        style={{ width: `${value}%` }}
-      />
-    </div>
-    <span className="w-10 text-right text-xs font-600">{value}%</span>
+const Spec = ({ icon, label, value }: { icon: string; label: string; value: string }) => (
+  <div className="flex items-center justify-between py-1.5 text-sm">
+    <span className="flex items-center gap-2 text-primary-foreground/60">
+      <Icon name={icon} size={15} /> {label}
+    </span>
+    <span className="font-600">{value}</span>
   </div>
 );
 
