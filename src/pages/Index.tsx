@@ -107,55 +107,118 @@ const comparisons = [
   },
 ];
 
-const serpResults = [
+const serpGroups = [
   {
-    brand: 'BERKANO',
-    domain: 'brkno.com',
-    path: '› Кашпо-BERKANO...',
-    title: 'Уличный пластиковый вазон для сада и улицы',
-    desc: 'Дизайнерские кашпо разных размеров и цветов, с LED подсветкой и влагозащитой... В наличии и под заказ. Широкий ассортимент на магазин',
-    rating: '4,6',
-    reviews: '28 отзывов на магазин',
-    tags: ['Широкая палитра — 17 цветов', 'Одинарное и двойное дно', 'LED', 'Защита IP68'],
-    phone: '+7 (800) 511-XX-XX',
-    hours: 'ежедневно 10:00–22:00',
-    metro: 'м. Международная',
-    icon: 'B',
-    iconBg: 'bg-red-500',
-    promo: true,
+    query: 'уличный пластиковый вазон',
+    results: [
+      {
+        brand: 'BERKANO',
+        domain: 'brkno.com',
+        path: '› Кашпо-BERKANO...',
+        title: 'Уличный пластиковый вазон для сада и улицы',
+        desc: 'Дизайнерские кашпо разных размеров и цветов, с LED подсветкой и влагозащитой... В наличии и под заказ. Широкий ассортимент на магазин',
+        rating: '4,6',
+        reviews: '28 отзывов на магазин',
+        tags: ['Широкая палитра — 17 цветов', 'Одинарное и двойное дно', 'LED', 'Защита IP68'],
+        phone: '+7 (800) 511-XX-XX',
+        hours: 'ежедневно 10:00–22:00',
+        metro: 'м. Международная',
+        icon: 'B',
+        iconBg: 'bg-red-500',
+      },
+      {
+        brand: 'GURIAN',
+        domain: 'gurian.ru',
+        path: '› Напольные и подвесные вазоны для уличного озеленения...',
+        title: 'Напольные и подвесные вазоны для уличного озеленения',
+        desc: 'Вазоны от производителя',
+        rating: null,
+        reviews: null,
+        tags: ['Вазоны напольные', 'Гидровазоны', 'Металлоконструкции', 'Контакты'],
+        phone: null,
+        hours: null,
+        metro: null,
+        icon: '🌿',
+        iconBg: 'bg-green-600',
+      },
+      {
+        brand: 'ЗАО «Пластик» (наш)',
+        domain: 'ap-plastic.ru',
+        path: '› Уличные пластиковые вазоны от производителя ЗАО «Пластик»...',
+        title: 'Уличные пластиковые вазоны от производителя ЗАО...',
+        desc: 'Качественные и долговечные вазоны для ландшафтного дизайна садового участка. Прямоугольные. Квадратные. Круглые. Доставка по всей России. Большие. Малые. Выгодные цены. Для дачи. Для дома. Оптом и в розницу. Для парков',
+        rating: '4,5',
+        reviews: '10 отзывов на магазин',
+        tags: ['Собственное производство', 'Контактная информация', 'Каталог вазонов для цветов'],
+        phone: '+7 (800) 775-XX-XX',
+        hours: 'будни 8:30–17:00, перерыв 11:30–12:30',
+        metro: null,
+        icon: '🔵',
+        iconBg: 'bg-blue-500',
+        ours: true,
+      },
+    ],
+    conclusion: 'BERKANO использует рейтинг, эмоциональные УТП (LED-подсветка, 17 цветов) и явно указывает часы работы — это повышает CTR. У GURIAN нет рейтинга и слабый текст. Наш сниппет близок к BERKANO по рейтингу (4,5 против 4,6), но стоит добавить конкретные цифры в заголовок (например, «от 8 700 ₽») и указать преимущество по цене.',
   },
   {
-    brand: 'GURIAN',
-    domain: 'gurian.ru',
-    path: '› Напольные и подвесные вазоны для уличного озеленения...',
-    title: 'Напольные и подвесные вазоны для уличного озеленения',
-    desc: 'Вазоны от производителя',
-    rating: null,
-    reviews: null,
-    tags: ['Вазоны напольные', 'Гидровазоны', 'Металлоконструкции', 'Контакты'],
-    phone: null,
-    hours: null,
-    metro: null,
-    icon: '🌿',
-    iconBg: 'bg-green-600',
-    promo: true,
+    query: 'большой пластиковый вазон',
+    note: 'GURIAN в этой выдаче отсутствует',
+    results: [
+      {
+        brand: 'ЗАО «Пластик» (наш)',
+        domain: 'ap-plastic.ru',
+        path: '› Пластиковые вазоны для больших цветов от завода...',
+        title: 'Пластиковые вазоны для больших цветов от завода',
+        desc: 'Прочные и надёжные пластиковые вазоны. Выгодные цены. Прямоугольные. Квадратные. Круглые. Доставка по всей России. Большие. Малые. Выгодные цены. Для дачи. Для дома. Оптом и в розницу. Для парков',
+        rating: '4,5',
+        reviews: '10 отзывов на магазин',
+        tags: ['Собственное производство', 'Контактная информация', 'Каталог вазонов для цветов'],
+        phone: '+7 (800) 775-XX-XX',
+        hours: 'будни 8:30–17:00, перерыв 11:30–12:30',
+        metro: null,
+        badge: 'Выгода до 50% вазоны из долговечного пластика',
+        icon: '🔵',
+        iconBg: 'bg-blue-500',
+        ours: true,
+      },
+      {
+        brand: 'BERKANO',
+        domain: 'brkno.com',
+        path: '› Кашпо-BERKANO...',
+        title: 'Большие пластиковые кашпо BERKANO — широкий выбор в...',
+        desc: 'Дизайнерские кашпо разных размеров и цветов с доставкой по РФ. В наличии и под заказ. Широкий ассортимент. В любую точку РФ и мира',
+        rating: '4,6',
+        reviews: '28 отзывов на магазин',
+        tags: ['Широкая палитра — 17 цветов', 'Одинарное и двойное дно', 'LED', 'Защита IP68'],
+        phone: '+7 (800) 511-XX-XX',
+        hours: 'ежедневно 10:00–22:00',
+        metro: 'м. Международная',
+        icon: 'B',
+        iconBg: 'bg-red-500',
+      },
+    ],
+    conclusion: 'По этому запросу мы занимаем первую позицию — раньше BERKANO. У нас есть уникальное расширение «Выгода до 50%», которого нет у конкурента. Стоит закрепить позицию: добавить фильтры «Цена» и «Бренд», как в выдаче, и усилить визуальный акцент на скидке.',
   },
   {
-    brand: 'ЗАО «Пластик» (наш)',
-    domain: 'ap-plastic.ru',
-    path: '› Уличные пластиковые вазоны от производителя ЗАО «Пластик»...',
-    title: 'Уличные пластиковые вазоны от производителя ЗАО...',
-    desc: 'Качественные и долговечные вазоны для ландшафтного дизайна садового участка. Прямоугольные. Квадратные. Круглые. Доставка по всей России. Большие. Малые. Выгодные цены. Для дачи. Для дома. Оптом и в розницу. Для парков',
-    rating: '4,5',
-    reviews: '10 отзывов на магазин',
-    tags: ['Собственное производство', 'Контактная информация', 'Каталог вазонов для цветов'],
-    phone: '+7 (800) 775-XX-XX',
-    hours: 'будни 8:30–17:00, перерыв 11:30–12:30',
-    metro: null,
-    icon: '🔵',
-    iconBg: 'bg-blue-500',
-    promo: true,
-    ours: true,
+    query: 'купить уличные вазоны',
+    results: [
+      {
+        brand: 'GURIAN',
+        domain: 'gurian.ru',
+        path: '› Уличные вазоны — купить у производителя... Промо',
+        title: 'Уличные вазоны — купить у производителя',
+        desc: 'Вазоны для городского озеленения от производителя. Купить в...',
+        rating: null,
+        reviews: null,
+        tags: ['Вазоны напольные', 'Гидровазоны', 'Металлоконструкции', 'Контакты'],
+        phone: null,
+        hours: null,
+        metro: 'м. Автозаводская',
+        icon: '🌿',
+        iconBg: 'bg-green-600',
+      },
+    ],
+    conclusion: 'По транзакционному запросу «купить» лидирует GURIAN с промо-меткой и явным словом «купить» в заголовке — это увеличивает конверсию клика в покупку. Нас и BERKANO в этой выдаче нет — стоит занять эту нишу с коммерческим заголовком.',
   },
 ];
 
@@ -342,68 +405,92 @@ const Index = () => {
       <section className="container py-20">
         <SectionTitle icon="SearchCheck" pre="Поисковая выдача Яндекса" title="Сравнение объявлений" />
         <p className="text-muted-foreground max-w-2xl mt-4">
-          Как выглядят наши и конкурентные сниппеты по запросу «уличный пластиковый вазон».
+          Как выглядят наши и конкурентные сниппеты по трём ключевым запросам покупателей.
         </p>
 
-        <div className="mt-12 space-y-5 max-w-3xl">
-          {serpResults.map((r) => (
-            <div
-              key={r.brand}
-              className={`rounded-2xl border p-6 transition-all ${r.ours ? 'bg-accent/10 border-accent ring-2 ring-accent/30' : 'bg-card border-border'}`}
-            >
-              <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
-                <span className={`w-5 h-5 rounded-full ${r.iconBg} text-white flex items-center justify-center text-[10px] font-700`}>
-                  {r.icon}
-                </span>
-                <span className="font-600 text-foreground/70">{r.domain}</span>
-                <span>{r.path}</span>
-                <Icon name="ShoppingCart" size={14} className="ml-auto" />
-                {r.ours && (
-                  <span className="bg-accent text-accent-foreground text-[10px] font-700 px-2 py-0.5 rounded-full uppercase">Мы</span>
+        <div className="mt-12 space-y-20">
+          {serpGroups.map((group) => (
+            <div key={group.query}>
+              <div className="flex items-center gap-3 mb-6 max-w-3xl">
+                <div className="flex items-center gap-3 bg-card border border-border rounded-full px-5 py-2.5 flex-1">
+                  <span className="w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center text-xs font-700">Я</span>
+                  <span className="font-600">{group.query}</span>
+                  <Icon name="Search" size={16} className="ml-auto text-muted-foreground" />
+                </div>
+                {group.note && (
+                  <span className="text-xs text-muted-foreground italic hidden md:block">{group.note}</span>
                 )}
               </div>
-
-              <h3 className="text-lg text-blue-700 font-500 leading-snug hover:underline cursor-pointer">
-                {r.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{r.desc}</p>
-
-              {r.rating && (
-                <div className="flex items-center gap-2 mt-2 text-sm">
-                  <span className="text-amber-500 font-600 flex items-center gap-1">
-                    <Icon name="Star" size={14} className="fill-amber-500" /> {r.rating}
-                  </span>
-                  <span className="text-muted-foreground">{r.reviews}</span>
-                </div>
+              {group.note && (
+                <p className="text-xs text-muted-foreground italic mb-4 md:hidden">{group.note}</p>
               )}
 
-              <div className="flex flex-wrap gap-x-2 gap-y-1 text-sm text-blue-600 mt-2">
-                {r.tags.map((t, i) => (
-                  <span key={t} className="flex items-center">
-                    {t}
-                    {i < r.tags.length - 1 && <span className="text-muted-foreground mx-2">·</span>}
-                  </span>
+              <div className="space-y-5 max-w-3xl">
+                {group.results.map((r) => (
+                  <div
+                    key={r.brand}
+                    className={`rounded-2xl border p-6 transition-all ${r.ours ? 'bg-accent/10 border-accent ring-2 ring-accent/30' : 'bg-card border-border'}`}
+                  >
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
+                      <span className={`w-5 h-5 rounded-full ${r.iconBg} text-white flex items-center justify-center text-[10px] font-700`}>
+                        {r.icon}
+                      </span>
+                      <span className="font-600 text-foreground/70">{r.domain}</span>
+                      <span>{r.path}</span>
+                      <Icon name="ShoppingCart" size={14} className="ml-auto" />
+                      {r.ours && (
+                        <span className="bg-accent text-accent-foreground text-[10px] font-700 px-2 py-0.5 rounded-full uppercase">Мы</span>
+                      )}
+                    </div>
+
+                    <h3 className="text-lg text-blue-700 font-500 leading-snug hover:underline cursor-pointer">
+                      {r.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{r.desc}</p>
+
+                    {r.rating && (
+                      <div className="flex items-center gap-2 mt-2 text-sm">
+                        <span className="text-amber-500 font-600 flex items-center gap-1">
+                          <Icon name="Star" size={14} className="fill-amber-500" /> {r.rating}
+                        </span>
+                        <span className="text-muted-foreground">{r.reviews}</span>
+                      </div>
+                    )}
+
+                    <div className="flex flex-wrap gap-x-2 gap-y-1 text-sm text-blue-600 mt-2">
+                      {r.tags.map((t, i) => (
+                        <span key={t} className="flex items-center">
+                          {t}
+                          {i < r.tags.length - 1 && <span className="text-muted-foreground mx-2">·</span>}
+                        </span>
+                      ))}
+                    </div>
+
+                    {(r.phone || r.hours || r.metro) && (
+                      <div className="mt-3 pt-3 border-t border-border text-sm text-muted-foreground space-y-0.5">
+                        {r.phone && <div className="flex items-center gap-2"><Icon name="Phone" size={13} /> {r.phone}</div>}
+                        {r.hours && <div className="flex items-center gap-2"><Icon name="Clock" size={13} /> {r.hours}</div>}
+                        {r.metro && <div className="flex items-center gap-2"><Icon name="MapPin" size={13} /> {r.metro}</div>}
+                      </div>
+                    )}
+
+                    {r.badge && (
+                      <div className="mt-3 flex items-center gap-2 text-sm text-accent font-600">
+                        <Icon name="Tag" size={14} /> {r.badge}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
 
-              {(r.phone || r.hours || r.metro) && (
-                <div className="mt-3 pt-3 border-t border-border text-sm text-muted-foreground space-y-0.5">
-                  {r.phone && <div className="flex items-center gap-2"><Icon name="Phone" size={13} /> {r.phone}</div>}
-                  {r.hours && <div className="flex items-center gap-2"><Icon name="Clock" size={13} /> {r.hours}</div>}
-                  {r.metro && <div className="flex items-center gap-2"><Icon name="MapPin" size={13} /> {r.metro}</div>}
-                </div>
-              )}
+              <div className="mt-6 max-w-3xl bg-primary/5 border border-primary/20 rounded-2xl p-6 flex gap-4">
+                <Icon name="Lightbulb" className="text-primary shrink-0" size={22} />
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  <span className="font-700">Вывод:</span> {group.conclusion}
+                </p>
+              </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-8 max-w-3xl bg-primary/5 border border-primary/20 rounded-2xl p-6 flex gap-4">
-          <Icon name="Lightbulb" className="text-primary shrink-0" size={22} />
-          <p className="text-sm text-foreground/80 leading-relaxed">
-            <span className="font-700">Вывод:</span> BERKANO использует рейтинг, эмоциональные УТП (LED-подсветка, 17 цветов) и явно указывает часы работы — это повышает CTR.
-            У GURIAN нет рейтинга и слабый текст. Наш сниппет близок к BERKANO по рейтингу (4,5 против 4,6), но стоит добавить конкретные цифры в заголовок
-            (например, «от 8 700 ₽») и указать преимущество по цене — это может увеличить кликабельность объявления.
-          </p>
         </div>
       </section>
 
