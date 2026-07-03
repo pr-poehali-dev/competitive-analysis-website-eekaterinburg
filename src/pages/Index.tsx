@@ -13,6 +13,7 @@ const allCompetitors = [
     name: 'GURIAN',
     site: 'https://gurian.ru',
     city: 'Липецк',
+    distance: '~2 000 км от Екатеринбурга',
     direct: true,
     material: 'Пластик',
     note: 'Прямой конкурент: тот же ассортимент пластиковых вазонов, федеральный охват без локального присутствия.',
@@ -37,6 +38,7 @@ const allCompetitors = [
     name: 'Clean Planet Group',
     site: 'https://cleanplanetgroup.ru',
     city: 'Славянск-на-Кубани',
+    distance: '~2 400 км от Екатеринбурга',
     direct: false,
     material: 'Бетон, композит',
     note: 'Собственное производство бетонных вазонов, закрывает ту же потребность заказчика.',
@@ -45,6 +47,7 @@ const allCompetitors = [
     name: 'Garden of Joy',
     site: 'https://kashpo.sadradosti.ru/',
     city: 'Волгоград',
+    distance: '~1 700 км от Екатеринбурга',
     direct: false,
     material: 'Керамика, глина',
     note: 'Декоративные керамические кашпо — иной материал, но тот же сценарий использования.',
@@ -53,6 +56,7 @@ const allCompetitors = [
     name: 'Marble Collection',
     site: 'https://marble-collection.com/',
     city: 'Санкт-Петербург',
+    distance: '~2 200 км от Екатеринбурга',
     direct: false,
     material: 'Мрамор, камень',
     note: 'Премиальный сегмент из натурального камня, конкурирует за бюджет благоустройства.',
@@ -61,6 +65,7 @@ const allCompetitors = [
     name: 'Светхолл',
     site: 'https://svetholl.ru/katalog/vazony/vazony-dlya-tsvetov/',
     city: 'Казань',
+    distance: '~950 км от Екатеринбурга',
     direct: false,
     material: 'Металл, бетон',
     note: 'Комплексные решения по благоустройству территорий в ином материальном исполнении.',
@@ -69,6 +74,7 @@ const allCompetitors = [
     name: 'АСБ',
     site: 'https://asb-maf.ru/catalog/tsvetochnitsy-i-vazony/vazon-barselona/',
     city: 'Чувашия',
+    distance: '~1 100 км от Екатеринбурга',
     direct: false,
     material: 'Бетон',
     note: 'МАФ для городской среды серии «Барселона» — иной материал, та же функция.',
@@ -77,6 +83,7 @@ const allCompetitors = [
     name: 'ЮАМЕТ',
     site: 'https://yuamet.com/product/dlya-parka/besedki-lavochki-urny-ograzhdeniya/vazony/',
     city: 'Москва',
+    distance: '~1 780 км от Екатеринбурга',
     direct: false,
     material: 'Металл',
     note: 'Парковая инфраструктура из металла: беседки, урны и вазоны для благоустройства.',
@@ -85,7 +92,7 @@ const allCompetitors = [
 
 const comparisons = [
   {
-    title: 'Ваза декоративная №8 «Аура»',
+    title: 'Сравнение №1 · Средний вазон',
     ours: {
       brand: 'ЗАО «Пластик»',
       shop: 'ap-plastic.ru',
@@ -115,8 +122,8 @@ const comparisons = [
         brand: 'GURIAN',
         shop: 'gurian.ru',
         model: 'Вазон уличный «GURIAN Classic»',
-        img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/be5f4759-3a2b-4e32-bf94-84085b3be37d.jpg',
-        size: '800×800×900',
+        img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/c7053abe-9588-4ef2-b8f1-d10170b3e29a.jpg',
+        size: '900×900×800',
         weight: '—',
         volume: '150 л',
         price: '25 200 ₽',
@@ -124,10 +131,10 @@ const comparisons = [
         url: 'https://gurian.ru/catalog/vazony-napolnye/kashpo-vazon-ulichnyy-gurian-classic-900-siniy-150-litrov-ozelenenie-goroda/',
       },
     ],
-    conclusion: 'При сопоставимом объёме (150–161 л) наша «Аура» дешевле BERKANO на 41% и дешевле GURIAN почти в 3 раза. Конкуренты закладывают в цену премиальный дизайн, но по факту дают меньший или сопоставимый объём — наше предложение выигрывает по соотношению цена/объём.',
+    conclusion: 'Цель разбора — показать реальную конкурентоспособность нашего товара «в моменте выбора» покупателем: при сопоставимом объёме (150–161 л) наша модель дешевле BERKANO на 41% и дешевле GURIAN почти в 3 раза. Это готовый аргумент для отдела продаж и рекламных объявлений при выходе на рынок Екатеринбурга.',
   },
   {
-    title: 'Ваза декоративная №30 «Куб малый»',
+    title: 'Сравнение №2 · Крупный вазон',
     ours: {
       brand: 'ЗАО «Пластик»',
       shop: 'ap-plastic.ru',
@@ -166,7 +173,7 @@ const comparisons = [
         url: 'https://gurian.ru/catalog/vazony-napolnye/vazon-napolnyy-bolshoy/',
       },
     ],
-    conclusion: 'Наш «Куб малый» даёт наибольший объём (180 л) среди сопоставимых по размеру моделей и стоит на 19% дешевле BERKANO. GURIAN дешевле нас, но проигрывает в объёме на 23 литра — по цене за литр наше предложение остаётся более выгодным.',
+    conclusion: 'Этот срез нужен, чтобы понять расстановку сил в сегменте крупных вазонов: наша модель даёт наибольший объём (180 л) и стоит на 19% дешевле BERKANO. GURIAN дешевле нас по цене, но проигрывает в объёме на 23 литра — итог показывает, где мы сильнее по цене за литр, а где конкурент демпингует за счёт меньшего размера.',
   },
 ];
 
@@ -308,7 +315,7 @@ const Index = () => {
             Конкурентный анализ · 2026
           </div>
           <h1 className="animate-fade-up font-display font-700 text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-4xl uppercase" style={{ animationDelay: '0.1s' }}>
-            Конкуренты в платной выдаче Яндекса
+            Конкуренты в платной выдаче Яндекса в Екатеринбурге
           </h1>
           <p className="animate-fade-up mt-6 text-lg md:text-xl text-primary-foreground/80 max-w-2xl" style={{ animationDelay: '0.2s' }}>
             Анализ конкурентов: ассортимент, регион присутствия и разбор рекламных объявлений в поиске Яндекса
@@ -357,6 +364,11 @@ const Index = () => {
                 <span className="flex items-center gap-1"><Icon name="MapPin" size={14} /> {c.city}</span>
                 <span className="flex items-center gap-1 text-foreground/80 font-600"><Icon name="Package" size={14} /> {c.material}</span>
               </div>
+              {c.distance && (
+                <div className="flex items-center gap-1 text-muted-foreground/70 text-xs mt-1">
+                  <Icon name="Navigation" size={12} /> {c.distance}
+                </div>
+              )}
               <p className="text-sm text-foreground/80 leading-relaxed mt-4">{c.note}</p>
               <a
                 href={c.site}
@@ -392,6 +404,11 @@ const Index = () => {
                 <div className="flex items-center gap-1 text-muted-foreground text-xs mt-1.5">
                   <Icon name="MapPin" size={12} /> {c.city}
                 </div>
+                {c.distance && (
+                  <div className="flex items-center gap-1 text-muted-foreground/70 text-[11px] mt-0.5">
+                    <Icon name="Navigation" size={11} /> {c.distance}
+                  </div>
+                )}
                 <div className="mt-3 flex items-center gap-2 text-xs">
                   <span className="bg-primary/10 text-primary font-600 px-2.5 py-1 rounded-full flex items-center gap-1">
                     <Icon name="Package" size={12} /> {c.material}
@@ -440,8 +457,8 @@ const Index = () => {
                           key={p.brand + idx}
                           className={`rounded-2xl overflow-hidden border ${isOurs ? 'bg-accent/15 border-accent ring-2 ring-accent/40' : 'bg-primary-foreground/5 border-primary-foreground/15'}`}
                         >
-                          <div className="relative h-52 bg-white overflow-hidden">
-                            <img src={p.img} alt={p.brand} className="w-full h-full object-cover" />
+                          <div className="relative h-64 bg-white overflow-hidden p-4">
+                            <img src={p.img} alt={p.brand} className="w-full h-full object-contain" />
                             <span className={`absolute top-3 left-3 text-xs font-700 px-3 py-1 rounded-full ${isOurs ? 'bg-accent text-accent-foreground' : 'bg-primary text-primary-foreground'}`}>
                               {p.brand}
                             </span>
