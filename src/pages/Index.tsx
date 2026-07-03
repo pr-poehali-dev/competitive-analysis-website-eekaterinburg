@@ -1,77 +1,77 @@
-import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
-const competitors = [
+const allCompetitors = [
   {
-    name: 'BRKNO Урал',
+    name: 'BRKNO (Berkano)',
     site: 'https://brkno.com',
     city: 'Екатеринбург',
-    showroom: true,
-    presence: 'Прямой конкурент',
-    strengths: ['Физический шоурум в Екатеринбурге', 'Локальная логистика', 'Доверие местных клиентов'],
-    weaknesses: ['Ограниченный ассортимент уличных серий', 'Средний ценовой сегмент'],
-    threat: 90,
-  },
-  {
-    name: 'Gurian',
-    site: 'https://gurian.ru',
-    city: 'Липецк',
-    showroom: false,
-    presence: 'Федеральный игрок',
-    strengths: ['Широкий каталог напольных вазонов', 'Развитая онлайн-витрина', 'Опт и розница'],
-    weaknesses: ['Удалённая логистика до Урала', 'Нет присутствия в регионе', 'Долгая доставка'],
-    threat: 55,
-  },
-];
-
-const otherMaterialCompetitors = [
-  {
-    name: 'Clean Planet Group',
-    site: 'https://cleanplanetgroup.ru',
-    material: 'Бетон, композит',
-    note: 'Собственное производство, южный регион',
-  },
-  {
-    name: 'Garden of Joy',
-    site: 'https://kashpo.sadradosti.ru/',
-    material: 'Керамика, глина',
-    note: 'Декоративные кашпо для сада',
-  },
-  {
-    name: 'Marble Collection',
-    site: 'https://marble-collection.com/',
-    material: 'Мрамор, камень',
-    note: 'Премиальный сегмент, эксклюзивные формы',
-  },
-  {
-    name: 'ABRIS',
-    site: 'https://abris-ur.ru/',
-    material: 'Металл, бетон',
-    note: 'Городское благоустройство и МАФ',
+    direct: true,
+    material: 'Пластик',
+    note: 'Прямой конкурент: идентичный ассортимент (пластиковые вазоны) и присутствие в целевом регионе.',
   },
   {
     name: 'Технезис',
     site: 'https://technezis.com/',
+    city: 'Екатеринбург',
+    direct: false,
     material: 'Стеклопластик, композит',
-    note: 'Промышленное производство форм',
+    note: 'Иной ассортимент по материалу, но решает ту же задачу — благоустройство территорий.',
+  },
+  {
+    name: 'ABRIS',
+    site: 'https://abris-ur.ru/',
+    city: 'Екатеринбург',
+    direct: false,
+    material: 'Металл, бетон',
+    note: 'Производит малые архитектурные формы из металла и бетона для городской среды.',
+  },
+  {
+    name: 'Clean Planet Group',
+    site: 'https://cleanplanetgroup.ru',
+    city: 'Славянск-на-Кубани',
+    direct: false,
+    material: 'Бетон, композит',
+    note: 'Собственное производство бетонных вазонов, закрывает ту же потребность заказчика.',
+  },
+  {
+    name: 'Garden of Joy',
+    site: 'https://kashpo.sadradosti.ru/',
+    city: 'Волгоград',
+    direct: false,
+    material: 'Керамика, глина',
+    note: 'Декоративные керамические кашпо — иной материал, но тот же сценарий использования.',
+  },
+  {
+    name: 'Marble Collection',
+    site: 'https://marble-collection.com/',
+    city: 'Санкт-Петербург',
+    direct: false,
+    material: 'Мрамор, камень',
+    note: 'Премиальный сегмент из натурального камня, конкурирует за бюджет благоустройства.',
   },
   {
     name: 'Светхолл',
     site: 'https://svetholl.ru/katalog/vazony/vazony-dlya-tsvetov/',
+    city: 'Казань',
+    direct: false,
     material: 'Металл, бетон',
-    note: 'Комплексное благоустройство территорий',
+    note: 'Комплексные решения по благоустройству территорий в ином материальном исполнении.',
   },
   {
     name: 'АСБ',
     site: 'https://asb-maf.ru/catalog/tsvetochnitsy-i-vazony/vazon-barselona/',
+    city: 'Чувашия',
+    direct: false,
     material: 'Бетон',
-    note: 'МАФ для городской среды, серия «Барселона»',
+    note: 'МАФ для городской среды серии «Барселона» — иной материал, та же функция.',
   },
   {
     name: 'ЮАМЕТ',
     site: 'https://yuamet.com/product/dlya-parka/besedki-lavochki-urny-ograzhdeniya/vazony/',
+    city: 'Москва',
+    direct: false,
     material: 'Металл',
-    note: 'Парковая инфраструктура: беседки, урны, вазоны',
+    note: 'Парковая инфраструктура из металла: беседки, урны и вазоны для благоустройства.',
   },
 ];
 
@@ -273,8 +273,6 @@ const dataNeeds = [
 ];
 
 const Index = () => {
-  const [active, setActive] = useState(0);
-
   return (
     <div className="min-h-screen leaf-bg">
       {/* HERO */}
@@ -288,16 +286,16 @@ const Index = () => {
             Конкурентный анализ · 2026
           </div>
           <h1 className="animate-fade-up font-display font-700 text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-4xl uppercase" style={{ animationDelay: '0.1s' }}>
-            Рынок уличных вазонов из&nbsp;пластика
+            Конкуренты в платной выдаче Яндекса
           </h1>
           <p className="animate-fade-up mt-6 text-lg md:text-xl text-primary-foreground/80 max-w-2xl" style={{ animationDelay: '0.2s' }}>
-            Отчёт по конкурентной среде в Екатеринбурге. Мы производим вазоны из высококачественного пластика и находимся в Челябинске — этот анализ показывает, как выйти на соседний рынок
+            Анализ конкурентов: ассортимент, регион присутствия и разбор рекламных объявлений в поиске Яндекса
           </p>
           <div className="animate-fade-up mt-10 flex flex-wrap gap-4" style={{ animationDelay: '0.3s' }}>
             {[
-              { n: '2', t: 'прямых конкурента' },
-              { n: '~200 км', t: 'от Челябинска до Екб' },
-              { n: '1', t: 'локальный шоурум у соперников' },
+              { n: '9', t: 'конкурентов в анализе' },
+              { n: '1', t: 'прямой конкурент по ассортименту' },
+              { n: '8', t: 'решают ту же задачу иным материалом' },
             ].map((s) => (
               <div key={s.t} className="bg-primary-foreground/10 backdrop-blur rounded-xl px-6 py-4 border border-primary-foreground/15">
                 <div className="font-display text-3xl text-accent">{s.n}</div>
@@ -308,57 +306,39 @@ const Index = () => {
         </div>
       </header>
 
-      {/* КОНКУРЕНТЫ */}
+      {/* ПРОФИЛИ КОНКУРЕНТОВ */}
       <section className="container py-20">
         <SectionTitle icon="Target" pre="Кто на рынке" title="Профили конкурентов" />
-        <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-3xl">
-          {competitors.map((c, i) => (
-            <div
-              key={c.name}
-              onClick={() => setActive(i)}
-              className={`hover-lift cursor-pointer bg-card rounded-2xl border p-7 ${active === i ? 'border-accent ring-2 ring-accent/30' : 'border-border'}`}
-            >
+        <p className="text-muted-foreground max-w-2xl mt-4">
+          Один игрок совпадает с нами по ассортименту напрямую — производит вазоны из пластика. Остальные восемь работают с иным материалом (бетон, металл, керамика, камень), но решают ту же задачу заказчика — благоустройство территории — и поэтому тоже являются нашими конкурентами за бюджет клиента.
+        </p>
+
+        {/* Прямой конкурент */}
+        <div className="mt-12">
+          <div className="flex items-center gap-2 mb-5">
+            <Icon name="Crosshair" className="text-destructive" size={18} />
+            <span className="text-xs font-700 uppercase tracking-widest text-destructive">Прямой конкурент · совпадение по ассортименту</span>
+          </div>
+          {allCompetitors.filter((c) => c.direct).map((c) => (
+            <div key={c.name} className="hover-lift bg-card rounded-2xl border-2 border-destructive/30 ring-2 ring-destructive/10 p-7 max-w-xl">
               <div className="flex items-start justify-between mb-4">
-                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
-                  <Icon name="Building2" className="text-primary" size={24} />
+                <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center">
+                  <Icon name="Building2" className="text-destructive" size={24} />
                 </div>
-                <span className={`text-xs font-600 px-3 py-1 rounded-full ${i === 0 ? 'bg-destructive/10 text-destructive' : 'bg-secondary text-secondary-foreground'}`}>
-                  {c.presence}
+                <span className="text-xs font-600 px-3 py-1 rounded-full bg-destructive/10 text-destructive">
+                  Прямой конкурент
                 </span>
               </div>
               <h3 className="font-display text-2xl uppercase">{c.name}</h3>
-              <div className="flex items-center gap-2 text-muted-foreground text-sm mt-1">
-                <Icon name="MapPin" size={14} /> {c.city}
-                {c.showroom && <span className="text-accent flex items-center gap-1"><Icon name="Store" size={14} /> шоурум</span>}
+              <div className="flex items-center gap-4 text-muted-foreground text-sm mt-1">
+                <span className="flex items-center gap-1"><Icon name="MapPin" size={14} /> {c.city}</span>
+                <span className="flex items-center gap-1 text-foreground/80 font-600"><Icon name="Package" size={14} /> {c.material}</span>
               </div>
-
-              <div className="mt-5">
-                <div className="flex justify-between text-xs mb-1">
-                  <span className="text-muted-foreground">Уровень угрозы</span>
-                  <span className="font-600">{c.threat}%</span>
-                </div>
-                <div className="h-2 rounded-full bg-secondary overflow-hidden">
-                  <div className="h-full bg-destructive rounded-full transition-all duration-700" style={{ width: `${c.threat}%` }} />
-                </div>
-              </div>
-
-              <div className="mt-5 space-y-2 text-sm">
-                {c.strengths.slice(0, 2).map((s) => (
-                  <div key={s} className="flex items-start gap-2 text-foreground/80">
-                    <Icon name="Plus" size={16} className="text-primary mt-0.5 shrink-0" /> {s}
-                  </div>
-                ))}
-                {c.weaknesses.slice(0, 1).map((s) => (
-                  <div key={s} className="flex items-start gap-2 text-muted-foreground">
-                    <Icon name="Minus" size={16} className="text-destructive mt-0.5 shrink-0" /> {s}
-                  </div>
-                ))}
-              </div>
+              <p className="text-sm text-foreground/80 leading-relaxed mt-4">{c.note}</p>
               <a
                 href={c.site}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
                 className="mt-5 pt-4 border-t border-border flex items-center gap-2 font-700 text-primary hover:text-accent transition-colors group"
               >
                 <Icon name="ExternalLink" size={16} />
@@ -368,25 +348,29 @@ const Index = () => {
             </div>
           ))}
         </div>
-      </section>
 
-      {/* КОНКУРЕНТЫ ИЗ ДРУГИХ МАТЕРИАЛОВ */}
-      <section className="bg-secondary py-20">
-        <div className="container">
-          <SectionTitle icon="Layers" pre="Другой сегмент рынка" title="Конкуренты по иным материалам" />
-          <p className="text-muted-foreground max-w-2xl mt-4">
-            Эти компании тоже продают и производят вазоны для благоустройства территорий, но работают с бетоном, металлом, керамикой и камнем — не с пластиком. Прямой ценовой конкуренции с ними нет, но они борются за тот же бюджет заказчика.
+        {/* Конкуренты с иным ассортиментом */}
+        <div className="mt-16">
+          <div className="flex items-center gap-2 mb-2">
+            <Icon name="Layers" className="text-primary" size={18} />
+            <span className="text-xs font-700 uppercase tracking-widest text-primary">Косвенные конкуренты · иной материал, та же задача</span>
+          </div>
+          <p className="text-sm text-muted-foreground max-w-2xl mb-6">
+            Материал изготовления отличается от нашего, но потребность заказчика — озеленение и благоустройство территории — идентична. Это делает их прямыми соперниками за один и тот же тендер или бюджет.
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-            {otherMaterialCompetitors.map((c) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {allCompetitors.filter((c) => !c.direct).map((c) => (
               <div key={c.name} className="hover-lift bg-card rounded-2xl border border-border p-6">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Icon name="Factory" className="text-primary" size={20} />
                 </div>
                 <h3 className="font-display text-lg uppercase leading-tight">{c.name}</h3>
+                <div className="flex items-center gap-1 text-muted-foreground text-xs mt-1.5">
+                  <Icon name="MapPin" size={12} /> {c.city}
+                </div>
                 <div className="mt-3 flex items-center gap-2 text-xs">
                   <span className="bg-primary/10 text-primary font-600 px-2.5 py-1 rounded-full flex items-center gap-1">
-                    <Icon name="Layers" size={12} /> {c.material}
+                    <Icon name="Package" size={12} /> {c.material}
                   </span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{c.note}</p>
