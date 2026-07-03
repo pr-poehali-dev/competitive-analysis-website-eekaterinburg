@@ -22,15 +22,56 @@ const competitors = [
     weaknesses: ['Удалённая логистика до Урала', 'Нет присутствия в регионе', 'Долгая доставка'],
     threat: 55,
   },
+];
+
+const otherMaterialCompetitors = [
   {
     name: 'Clean Planet Group',
     site: 'https://cleanplanetgroup.ru',
-    city: 'Славянск-на-Кубани',
-    showroom: false,
-    presence: 'Южный регион',
-    strengths: ['Специализация на уличных кашпо', 'Собственное производство'],
-    weaknesses: ['Огромное транспортное плечо до Екб', 'Слабая узнаваемость на Урале', 'Высокая стоимость доставки'],
-    threat: 35,
+    material: 'Бетон, композит',
+    note: 'Собственное производство, южный регион',
+  },
+  {
+    name: 'Garden of Joy',
+    site: 'https://kashpo.sadradosti.ru/',
+    material: 'Керамика, глина',
+    note: 'Декоративные кашпо для сада',
+  },
+  {
+    name: 'Marble Collection',
+    site: 'https://marble-collection.com/',
+    material: 'Мрамор, камень',
+    note: 'Премиальный сегмент, эксклюзивные формы',
+  },
+  {
+    name: 'ABRIS',
+    site: 'https://abris-ur.ru/',
+    material: 'Металл, бетон',
+    note: 'Городское благоустройство и МАФ',
+  },
+  {
+    name: 'Технезис',
+    site: 'https://technezis.com/',
+    material: 'Стеклопластик, композит',
+    note: 'Промышленное производство форм',
+  },
+  {
+    name: 'Светхолл',
+    site: 'https://svetholl.ru/katalog/vazony/vazony-dlya-tsvetov/',
+    material: 'Металл, бетон',
+    note: 'Комплексное благоустройство территорий',
+  },
+  {
+    name: 'АСБ',
+    site: 'https://asb-maf.ru/catalog/tsvetochnitsy-i-vazony/vazon-barselona/',
+    material: 'Бетон',
+    note: 'МАФ для городской среды, серия «Барселона»',
+  },
+  {
+    name: 'ЮАМЕТ',
+    site: 'https://yuamet.com/product/dlya-parka/besedki-lavochki-urny-ograzhdeniya/vazony/',
+    material: 'Металл',
+    note: 'Парковая инфраструктура: беседки, урны, вазоны',
   },
 ];
 
@@ -254,7 +295,7 @@ const Index = () => {
           </p>
           <div className="animate-fade-up mt-10 flex flex-wrap gap-4" style={{ animationDelay: '0.3s' }}>
             {[
-              { n: '3', t: 'ключевых конкурента' },
+              { n: '2', t: 'прямых конкурента' },
               { n: '~200 км', t: 'от Челябинска до Екб' },
               { n: '1', t: 'локальный шоурум у соперников' },
             ].map((s) => (
@@ -270,7 +311,7 @@ const Index = () => {
       {/* КОНКУРЕНТЫ */}
       <section className="container py-20">
         <SectionTitle icon="Target" pre="Кто на рынке" title="Профили конкурентов" />
-        <div className="grid md:grid-cols-3 gap-6 mt-12">
+        <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-3xl">
           {competitors.map((c, i) => (
             <div
               key={c.name}
@@ -326,6 +367,42 @@ const Index = () => {
               </a>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* КОНКУРЕНТЫ ИЗ ДРУГИХ МАТЕРИАЛОВ */}
+      <section className="bg-secondary py-20">
+        <div className="container">
+          <SectionTitle icon="Layers" pre="Другой сегмент рынка" title="Конкуренты по иным материалам" />
+          <p className="text-muted-foreground max-w-2xl mt-4">
+            Эти компании тоже продают и производят вазоны для благоустройства территорий, но работают с бетоном, металлом, керамикой и камнем — не с пластиком. Прямой ценовой конкуренции с ними нет, но они борются за тот же бюджет заказчика.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+            {otherMaterialCompetitors.map((c) => (
+              <div key={c.name} className="hover-lift bg-card rounded-2xl border border-border p-6">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <Icon name="Factory" className="text-primary" size={20} />
+                </div>
+                <h3 className="font-display text-lg uppercase leading-tight">{c.name}</h3>
+                <div className="mt-3 flex items-center gap-2 text-xs">
+                  <span className="bg-primary/10 text-primary font-600 px-2.5 py-1 rounded-full flex items-center gap-1">
+                    <Icon name="Layers" size={12} /> {c.material}
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{c.note}</p>
+                <a
+                  href={c.site}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 pt-3 border-t border-border flex items-center gap-2 font-700 text-sm text-primary hover:text-accent transition-colors group"
+                >
+                  <Icon name="ExternalLink" size={14} />
+                  <span className="underline underline-offset-4 decoration-2">Сайт</span>
+                  <Icon name="ArrowRight" size={14} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
