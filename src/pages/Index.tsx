@@ -139,7 +139,7 @@ const comparisons = [
       brand: 'ЗАО «Пластик»',
       shop: 'ap-plastic.ru',
       model: 'Ваза декоративная №30 «Куб малый»',
-      img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/6ac6dbe4-4a69-4375-80e0-e51f1a23e11f.jpg',
+      img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/d5a16f54-8b80-47ea-97b7-ebc3e15b2201.jpg',
       size: '790×790×790',
       weight: '30,2 кг',
       volume: '180 л',
