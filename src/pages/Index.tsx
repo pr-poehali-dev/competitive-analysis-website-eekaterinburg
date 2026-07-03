@@ -10,6 +10,14 @@ const allCompetitors = [
     note: 'Прямой конкурент: идентичный ассортимент (пластиковые вазоны) и присутствие в целевом регионе.',
   },
   {
+    name: 'GURIAN',
+    site: 'https://gurian.ru',
+    city: 'Липецк',
+    direct: true,
+    material: 'Пластик',
+    note: 'Прямой конкурент: тот же ассортимент пластиковых вазонов, федеральный охват без локального присутствия.',
+  },
+  {
     name: 'Технезис',
     site: 'https://technezis.com/',
     city: 'Екатеринбург',
@@ -79,8 +87,10 @@ const comparisons = [
   {
     title: 'Ваза декоративная №8 «Аура»',
     ours: {
-      brand: 'ЗАО «Пластик» (наш)',
-      img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/876db766-21c9-4565-8f22-49d05b80dec2.jpg',
+      brand: 'ЗАО «Пластик»',
+      shop: 'ap-plastic.ru',
+      model: 'Ваза декоративная №8 «Аура»',
+      img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/40f50d6c-af71-4b88-afbd-460eb58f1aa1.jpg',
       size: '750×750×550',
       weight: '6 кг',
       volume: '161 л',
@@ -91,6 +101,8 @@ const comparisons = [
     rivals: [
       {
         brand: 'BERKANO',
+        shop: 'brkno.com',
+        model: 'Кашпо Classic 60',
         img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/9bdb59d4-c7a9-4a27-bae3-ebdcceba2ed3.jpg',
         size: '650×340×600',
         weight: '6 кг',
@@ -101,6 +113,8 @@ const comparisons = [
       },
       {
         brand: 'GURIAN',
+        shop: 'gurian.ru',
+        model: 'Вазон уличный «GURIAN Classic»',
         img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/be5f4759-3a2b-4e32-bf94-84085b3be37d.jpg',
         size: '800×800×900',
         weight: '—',
@@ -110,12 +124,15 @@ const comparisons = [
         url: 'https://gurian.ru/catalog/vazony-napolnye/kashpo-vazon-ulichnyy-gurian-classic-900-siniy-150-litrov-ozelenenie-goroda/',
       },
     ],
+    conclusion: 'При сопоставимом объёме (150–161 л) наша «Аура» дешевле BERKANO на 41% и дешевле GURIAN почти в 3 раза. Конкуренты закладывают в цену премиальный дизайн, но по факту дают меньший или сопоставимый объём — наше предложение выигрывает по соотношению цена/объём.',
   },
   {
     title: 'Ваза декоративная №30 «Куб малый»',
     ours: {
-      brand: 'ЗАО «Пластик» (наш)',
-      img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/056243ea-f15e-490c-b54a-e0887ebaf662.jpg',
+      brand: 'ЗАО «Пластик»',
+      shop: 'ap-plastic.ru',
+      model: 'Ваза декоративная №30 «Куб малый»',
+      img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/6ac6dbe4-4a69-4375-80e0-e51f1a23e11f.jpg',
       size: '790×790×790',
       weight: '30,2 кг',
       volume: '180 л',
@@ -126,6 +143,8 @@ const comparisons = [
     rivals: [
       {
         brand: 'BERKANO',
+        shop: 'brkno.com',
+        model: 'Кашпо Cubo 80',
         img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/75169cef-33cc-4be5-baff-1497a909f83d.jpg',
         size: '800×800×640',
         weight: '19 кг',
@@ -136,6 +155,8 @@ const comparisons = [
       },
       {
         brand: 'GURIAN',
+        shop: 'gurian.ru',
+        model: 'Вазон напольный большой «Кадка 85»',
         img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/be5f4759-3a2b-4e32-bf94-84085b3be37d.jpg',
         size: '800×800×850',
         weight: '30 кг',
@@ -145,6 +166,7 @@ const comparisons = [
         url: 'https://gurian.ru/catalog/vazony-napolnye/vazon-napolnyy-bolshoy/',
       },
     ],
+    conclusion: 'Наш «Куб малый» даёт наибольший объём (180 л) среди сопоставимых по размеру моделей и стоит на 19% дешевле BERKANO. GURIAN дешевле нас, но проигрывает в объёме на 23 литра — по цене за литр наше предложение остаётся более выгодным.',
   },
 ];
 
@@ -293,8 +315,8 @@ const Index = () => {
           </p>
           <div className="animate-fade-up mt-10 flex flex-wrap gap-4" style={{ animationDelay: '0.3s' }}>
             {[
-              { n: '9', t: 'конкурентов в анализе' },
-              { n: '1', t: 'прямой конкурент по ассортименту' },
+              { n: '10', t: 'конкурентов в анализе' },
+              { n: '2', t: 'прямых конкурента по ассортименту' },
               { n: '8', t: 'решают ту же задачу иным материалом' },
             ].map((s) => (
               <div key={s.t} className="bg-primary-foreground/10 backdrop-blur rounded-xl px-6 py-4 border border-primary-foreground/15">
@@ -310,17 +332,18 @@ const Index = () => {
       <section className="container py-20">
         <SectionTitle icon="Target" pre="Кто на рынке" title="Профили конкурентов" />
         <p className="text-muted-foreground max-w-2xl mt-4">
-          Один игрок совпадает с нами по ассортименту напрямую — производит вазоны из пластика. Остальные восемь работают с иным материалом (бетон, металл, керамика, камень), но решают ту же задачу заказчика — благоустройство территории — и поэтому тоже являются нашими конкурентами за бюджет клиента.
+          Два игрока совпадают с нами по ассортименту напрямую — производят вазоны из пластика. Остальные восемь работают с иным материалом (бетон, металл, керамика, камень), но решают ту же задачу заказчика — благоустройство территории — и поэтому тоже являются нашими конкурентами за бюджет клиента.
         </p>
 
-        {/* Прямой конкурент */}
+        {/* Прямые конкуренты */}
         <div className="mt-12">
           <div className="flex items-center gap-2 mb-5">
             <Icon name="Crosshair" className="text-destructive" size={18} />
-            <span className="text-xs font-700 uppercase tracking-widest text-destructive">Прямой конкурент · совпадение по ассортименту</span>
+            <span className="text-xs font-700 uppercase tracking-widest text-destructive">Прямые конкуренты · совпадение по ассортименту</span>
           </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl">
           {allCompetitors.filter((c) => c.direct).map((c) => (
-            <div key={c.name} className="hover-lift bg-card rounded-2xl border-2 border-destructive/30 ring-2 ring-destructive/10 p-7 max-w-xl">
+            <div key={c.name} className="hover-lift bg-card rounded-2xl border-2 border-destructive/30 ring-2 ring-destructive/10 p-7">
               <div className="flex items-start justify-between mb-4">
                 <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center">
                   <Icon name="Building2" className="text-destructive" size={24} />
@@ -347,6 +370,7 @@ const Index = () => {
               </a>
             </div>
           ))}
+          </div>
         </div>
 
         {/* Конкуренты с иным ассортиментом */}
@@ -428,6 +452,12 @@ const Index = () => {
                             )}
                           </div>
                           <div className="p-6">
+                            <div className="mb-4 pb-4 border-b border-primary-foreground/15">
+                              <div className="font-600 text-primary-foreground leading-snug">{p.model}</div>
+                              <div className="text-xs text-primary-foreground/50 mt-1 flex items-center gap-1">
+                                <Icon name="Store" size={12} /> {p.shop}
+                              </div>
+                            </div>
                             <Spec icon="Ruler" label="Размер, мм" value={p.size} />
                             <Spec icon="Box" label="Объём" value={p.volume} />
                             <Spec icon="Weight" label="Вес" value={p.weight} />
@@ -454,6 +484,12 @@ const Index = () => {
                         </div>
                       );
                     })}
+                  </div>
+                  <div className="mt-6 bg-primary-foreground/5 border border-primary-foreground/15 rounded-2xl p-6 flex gap-4">
+                    <Icon name="Lightbulb" className="text-accent shrink-0" size={22} />
+                    <p className="text-sm text-primary-foreground/80 leading-relaxed">
+                      <span className="font-700 text-primary-foreground">Вывод:</span> {cmp.conclusion}
+                    </p>
                   </div>
                 </div>
               );
