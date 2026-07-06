@@ -233,6 +233,7 @@ const serpGroups = [
   {
     query: 'большой пластиковый вазон',
     note: 'GURIAN в этой выдаче отсутствует',
+    filters: ['Цена', 'Бренд'],
     results: [
       {
         brand: 'ЗАО «Пластик» (наш)',
@@ -294,6 +295,36 @@ const serpGroups = [
     query: 'большие вазоны купить',
     note: 'GURIAN в этой выдаче отсутствует — конкурируют в основном бетон и полимербетон',
     results: [
+      {
+        brand: 'SVETHOLL',
+        domain: 'svetholl.ru',
+        path: '› Вазоны-для-цветов-Sv... Промо',
+        title: 'Купить цветочный горшок (вазон) SVETHOLL',
+        desc: 'Изготовление и монтаж вазонов для цветов. Выгодные партнерские условия · Бесплатная обрешетка. 3D визуализация. Индивидуальная разработка. Изготовление на заказ. Доставка по России',
+        rating: null,
+        reviews: null,
+        tags: [],
+        phone: '+7 (800) 550-XX-XX',
+        hours: 'будни 8:00–17:00',
+        metro: null,
+        icon: 'S',
+        iconBg: 'bg-indigo-600',
+      },
+      {
+        brand: 'ЮАМЕТ',
+        domain: 'yuamet.com',
+        path: '› Уличные вазоны от производителя. Работаем с юр. лицами... Промо',
+        title: 'Уличные вазоны от производителя. Работаем с юр. лицами',
+        desc: 'Материалы премиум-качества. Индивидуальное проектирование. Работаем по всей России! Установка. Под ключ. Эко-премиум материалы. Оптом и в розницу',
+        rating: null,
+        reviews: null,
+        tags: ['Детские площадки и городки', 'Спортивные площадки', 'Реализованные проекты'],
+        phone: '+7 (800) 707-XX-XX',
+        hours: 'будни 9:00–18:00, перерыв 13:00–14:00',
+        metro: 'м. Коломенская',
+        icon: 'Ю',
+        iconBg: 'bg-amber-700',
+      },
       {
         brand: 'BERKANO',
         domain: 'brkno.com',
@@ -593,7 +624,7 @@ const Index = () => {
       <section className="container py-20">
         <SectionTitle icon="SearchCheck" pre="Поисковая выдача Яндекса" title="Сравнение объявлений" />
         <p className="text-muted-foreground max-w-2xl mt-4">
-          Как выглядят наши и конкурентные сниппеты по трём ключевым запросам покупателей.
+          Как выглядят наши и конкурентные сниппеты по ключевым запросам покупателей.
         </p>
 
         <div className="mt-12 space-y-20">
@@ -611,6 +642,15 @@ const Index = () => {
               </div>
               {group.note && (
                 <p className="text-xs text-muted-foreground italic mb-4 md:hidden">{group.note}</p>
+              )}
+              {group.filters && (
+                <div className="flex items-center gap-2 mb-4">
+                  {group.filters.map((f) => (
+                    <span key={f} className="flex items-center gap-1 text-sm text-muted-foreground border border-border rounded-full px-3 py-1">
+                      {f} <Icon name="ChevronDown" size={14} />
+                    </span>
+                  ))}
+                </div>
               )}
 
               <div className="space-y-5 max-w-3xl">
