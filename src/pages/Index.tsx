@@ -334,7 +334,7 @@ const serpGroups = [
         ours: true,
       },
     ],
-    conclusion: 'Запрос «купить уличные вазоны» — самый конкурентный: 10 промо-объявлений на первом экране. Лидер по рейтингу — Marble Collection (5,0), у большинства конкурентов рейтинга нет вовсе. Наш сниппет — единственный с явным указанием рейтинга 4,5 и отзывов среди производителей пластика, но заголовок стоит усилить словом «уличные» в начале и указать скидку, как в других наших объявлениях.',
+    conclusion: 'Запрос «купить уличные вазоны» — самый конкурентный: 10 промо-объявлений на первом экране. Лидер по рейтингу — Marble Collection (5,0), у большинства конкурентов рейтинга нет вовсе. Наш сниппет — единственный с явным указанием рейтинга 4,5 и отзывов среди производителей пластика.',
   },
   {
     query: 'большие вазоны купить',
@@ -432,7 +432,35 @@ const serpGroups = [
         ours: true,
       },
     ],
-    conclusion: 'По коммерческому запросу «большие вазоны купить» в топе преобладают производители из бетона и полимербетона: Marble Collection лидирует по рейтингу (5,0), у остальных конкурентов рейтинга нет. Наш сниппет уступает по рейтингу только Marble Collection, но выигрывает по цене — стоит добавить конкретную цифру скидки в заголовок и указать присутствие в регионе.',
+    conclusion: 'По коммерческому запросу «большие вазоны купить» в топе преобладают производители из бетона и полимербетона: Marble Collection лидирует по рейтингу (5,0), у остальных конкурентов рейтинга нет. Наш сниппет уступает по рейтингу только Marble Collection, но выигрывает по цене.',
+  },
+];
+
+const ekbPositions = [
+  {
+    query: 'купить вазоны для цветов уличные',
+    img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/35606397-b6d6-4e07-ae50-a59c4bc376e1.jpg',
+    note: 'Товарная галерея: наш каталог на 1-м месте среди промо-товаров, ниже — ещё одно наше текстовое объявление в топе выдачи.',
+  },
+  {
+    query: 'уличные вазоны из пластика',
+    img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/2dc5f46f-4674-4e50-beca-c61858330432.jpg',
+    note: 'Двойное присутствие по прямому запросу: наше объявление занимает 1-е место и повторно встречается ниже по странице.',
+  },
+  {
+    query: 'купить большие вазоны',
+    img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/b31e0865-cfb2-467e-8826-305aefe1516b.jpg',
+    note: 'Товарная галерея на 1-м месте, текстовое объявление — с быстрыми ссылками, плюс второе наше объявление сразу под ним.',
+  },
+  {
+    query: 'уличные вазоны',
+    img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/6c9ac2c4-1b4e-4165-bee3-e5336e5681f3.jpg',
+    note: 'Товарная галерея — наш каталог на 1-м месте среди промо-товаров по общему запросу.',
+  },
+  {
+    query: 'купить вазоны',
+    img: 'https://cdn.poehali.dev/projects/1ddc5012-c470-4c26-a827-91ac61619048/bucket/6e0daa69-6a4c-4552-9dbe-10dff5cb7500.jpg',
+    note: 'Товарная галерея на 2-м месте, а текстовое объявление занимает 1-ю позицию выдачи.',
   },
 ];
 
@@ -752,6 +780,32 @@ const Index = () => {
         </div>
       </section>
 
+      {/* НАШИ ПОЗИЦИИ В ЕКБ */}
+      <section className="container py-20">
+        <SectionTitle icon="MapPinned" pre="Своя выдача" title="Как мы выходим в поиске в Екатеринбурге" />
+        <p className="text-muted-foreground max-w-2xl mt-4">
+          Мы уже присутствуем в выдаче Яндекса по региону «Екатеринбург» — и в товарной галерее, и в текстовых объявлениях, часто занимая топовые позиции.
+        </p>
+
+        <div className="mt-12 grid md:grid-cols-2 gap-8">
+          {ekbPositions.map((p) => (
+            <div key={p.query} className="hover-lift bg-card rounded-2xl border border-border overflow-hidden">
+              <div className="flex items-center gap-3 px-6 pt-5">
+                <span className="w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center text-xs font-700 shrink-0">Я</span>
+                <span className="font-600">{p.query}</span>
+                <span className="ml-auto text-xs bg-accent/15 text-accent font-700 px-2.5 py-1 rounded-full flex items-center gap-1 shrink-0">
+                  <Icon name="MapPin" size={12} /> Екатеринбург
+                </span>
+              </div>
+              <div className="p-6 pt-4">
+                <img src={p.img} alt={p.query} className="w-full rounded-xl border border-border" />
+                <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{p.note}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* РЕКОМЕНДАЦИИ */}
       <section className="bg-secondary py-20">
         <div className="container">
@@ -773,6 +827,16 @@ const Index = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8 bg-primary rounded-2xl p-8 flex gap-5">
+            <Icon name="Globe" className="text-accent shrink-0" size={28} />
+            <div>
+              <h3 className="font-display text-xl uppercase text-primary-foreground mb-2">Отдельный раздел сайта под Екатеринбург</h3>
+              <p className="text-sm text-primary-foreground/80 leading-relaxed">
+                Раз мы уже хорошо видны в выдаче по региону — стоит закрепить успех: сделать на сайте раздел с реализованными проектами в Екатеринбурге, указать условия и сроки доставки в город, а также рассмотреть отдельный поддомен вида ekb.ap-plastic.ru для более точного попадания в локальную выдачу.
+              </p>
+            </div>
           </div>
         </div>
       </section>
