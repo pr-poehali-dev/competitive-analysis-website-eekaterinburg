@@ -292,15 +292,6 @@ const serpGroups = [
   },
 ];
 
-const dataNeeds = [
-  { icon: 'Tag', title: 'Цены и прайс-листы', desc: 'Собрать цены по сопоставимым моделям (объём, высота, форма). Источник: сайты конкурентов, запрос КП под видом клиента.' },
-  { icon: 'Package', title: 'Ассортимент и размеры', desc: 'Кол-во SKU, линейки объёмов, материалы, цветовая палитра. Источник: каталоги на сайтах, выгрузки товаров.' },
-  { icon: 'Truck', title: 'Логистика и сроки', desc: 'Стоимость и сроки доставки в Екатеринбург, наличие склада/шоурума. Источник: калькуляторы доставки, звонок менеджеру.' },
-  { icon: 'Search', title: 'Поисковый спрос', desc: 'Частотность запросов «уличные вазоны Екатеринбург», сезонность. Источник: Яндекс.Вордстат, Google Keyword Planner.' },
-  { icon: 'Star', title: 'Отзывы и репутация', desc: 'Оценки на Яндекс.Картах, 2ГИС, отзовиках. Выявить боли клиентов конкурентов. Источник: Яндекс.Карты, 2ГИС, Отзовик.' },
-  { icon: 'Users', title: 'Каналы продаж', desc: 'Работа с B2B (муниципалитеты, УК), тендеры, маркетплейсы. Источник: zakupki.gov.ru, Wildberries/Ozon, соцсети.' },
-];
-
 const Index = () => {
   return (
     <div className="min-h-screen leaf-bg">
@@ -603,25 +594,6 @@ const Index = () => {
                   <span className="font-700">Вывод:</span> {group.conclusion}
                 </p>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* КАКИЕ ДАННЫЕ НУЖНЫ */}
-      <section className="container py-20">
-        <SectionTitle icon="Database" pre="Методология" title="Какие данные собрать и где взять" />
-        <p className="text-muted-foreground max-w-2xl mt-4">
-          Чтобы отчёт был точным, соберите эти данные по каждому конкуренту. Ниже — что искать и в каких источниках.
-        </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-          {dataNeeds.map((d) => (
-            <div key={d.title} className="hover-lift bg-card rounded-2xl border border-border p-7">
-              <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-4">
-                <Icon name={d.icon} className="text-primary" size={24} />
-              </div>
-              <h3 className="font-display text-xl uppercase mb-2">{d.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
             </div>
           ))}
         </div>
